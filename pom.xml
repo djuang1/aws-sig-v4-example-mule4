@@ -37,10 +37,10 @@
             <version>1.5.3</version>
             <classifier>mule-plugin</classifier>
         </dependency>
-    	<dependency>
+    		<dependency>
             <groupId>b85b361d-0842-4b70-af37-2723c2c3ae7e</groupId>
             <artifactId>awsv4auth-extension</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.6</version>
             <classifier>mule-plugin</classifier>
         </dependency>
     </dependencies>
