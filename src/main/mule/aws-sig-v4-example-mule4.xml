@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:awsv4auth="http://www.mulesoft.org/schema/mule/awsv4auth" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
-	xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting"
-	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+<mule xmlns:awsv4auth="http://www.mulesoft.org/schema/mule/awsv4auth"
+	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
 http://www.mulesoft.org/schema/mule/awsv4auth http://www.mulesoft.org/schema/mule/awsv4auth/current/mule-awsv4auth.xsd">
-	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="2109d060-cfa8-41e3-ab08-40239b3a396e" >
-		<http:listener-connection host="0.0.0.0" port="8081" />
+	<http:listener-config name="HTTP_Listener_config"
+		doc:name="HTTP Listener config" doc:id="2109d060-cfa8-41e3-ab08-40239b3a396e">
+		<http:listener-connection host="0.0.0.0"
+			port="8081" />
 	</http:listener-config>
-	<configuration-properties doc:name="Configuration properties" doc:id="76e0ffd6-24e3-4cc7-b0d0-532d972a3bcf" file="mule-app.properties" />
-	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="ef9b7054-9cb9-4bb0-aefb-7928533bd6a6" requestStreamingMode="NEVER" enableCookies="false" sendCorrelationId="NEVER" preserveHeadersCase="true">
-		<http:request-connection protocol="HTTPS" host="lambda.us-east-1.amazonaws.com" port="443" />
+	<configuration-properties doc:name="Configuration properties"
+		doc:id="76e0ffd6-24e3-4cc7-b0d0-532d972a3bcf" file="mule-app.properties" />
+	<http:request-config name="HTTP_Request_configuration"
+		doc:name="HTTP Request configuration" doc:id="ef9b7054-9cb9-4bb0-aefb-7928533bd6a6"
+		requestStreamingMode="NEVER" enableCookies="false" sendCorrelationId="NEVER"
+		preserveHeadersCase="true">
+		<http:request-connection protocol="HTTPS"
+			host="lambda.us-east-1.amazonaws.com" port="443" />
 	</http:request-config>
 	<flow name="aws-sig-v4-example-mule4Flow" doc:id="1dd79553-1a8d-4586-b9ff-ab183adf848a" >
 		<http:listener doc:name="/hello" doc:id="1c98da1c-1da8-4b4f-8394-1f061d01da24" config-ref="HTTP_Listener_config" path="/hello"/>
